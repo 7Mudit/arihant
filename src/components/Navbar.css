@@ -1,0 +1,91 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'priori';
+  src: url('../../public/fonts/priorisans-1/zPrioriSansOT-Regular.otf') format('truetype');
+  font-style: normal;
+}
+@font-face {
+  font-family: 'priori-bold';
+  src: url('../../public/fonts/priorisans-1/PrioriSansOT-Bold.otf') format('truetype');
+  font-weight: bold;
+}
+
+body{
+  text-rendering: optimizeLegibility !important;
+}
+
+
+
+.navbar_section {
+  width: 100vw;
+  height: 50vh;
+  background-image: url(https://www.artisanlab.in/cdn/shop/collections/5_Candles___Fragrances.jpg?v=1648519698);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 32px;
+}
+
+.navbar_logo {
+  z-index: 2;
+}
+
+.navbar_logo img {
+  width: 95px;
+  height: 150px;
+}
+
+.navbar_navigation_links {
+  display: flex;
+  gap: 30px;
+  padding-top: 28px;
+  color: white;
+  letter-spacing: 1.1px;
+  z-index: 2;
+  height: 60px;
+  font-size: 18px;
+  text-shadow: grey;
+  font-family: priori, sans-serif;
+
+}
+
+.nav-link {
+  position: relative;
+  cursor: pointer;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background-color: #fff;
+  /* Change this to match the color you want for the underline */
+  transition: width 0.3s ease-in-out;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.navbar_three_icons {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 25px;
+  gap: 35px;
+  color: rgb(240, 235, 235);
+  font-size: 22px;
+  cursor: pointer;
+  z-index: 2;
+
+}

@@ -1,0 +1,46 @@
+  
+@font-face {
+    font-family: 'priori-light';
+    src: url('../../public/fonts/priorisans-1/PrioriSansOT-Light.otf') format('truetype');
+    font-weight: bold;
+}
+.category_card{
+    width: 250px;
+    height: 270px;
+    position: relative;
+    overflow: hidden;
+
+    cursor: pointer;
+}
+/* .category_card:hover{
+    filter: brightness(80%);
+} */
+.category_card img{
+    width: 100%;
+    height: 100%;
+    transition: 1s all linear;
+}
+.category_card img:hover{
+    filter: brightness(80%);
+    transform: scale(1.1);
+}
+
+.category-textOverlay{
+    position: absolute;
+    bottom: 20px;
+    width: 150px;
+    /* border: 1px solid black; */
+    padding: 6px;
+    background-color: #ece5de;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 99;
+    letter-spacing: 1.2px;
+}
+
+.category-textOverlay p{
+    text-transform: uppercase;
+    text-align: center;
+    font-family: priori-light, sans-serif;
+}
+
