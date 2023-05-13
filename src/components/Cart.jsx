@@ -10,6 +10,32 @@ const Cart = () => {
     (total, item) => total + parseInt(item.prize.replace(/[^0-9.-]+/g, "")),
     0
   );
+  const handleCheckout = () => {
+    var options = {
+      // S2tU31EgnR7PXsSuemC3Z9oi
+      "key": "rzp_test_zHCQ8uYC03OJAt", // Enter your key here
+      "amount": total * 100, // amount in the smallest currency unit
+      "currency": "INR",
+      "name": "Arihant Surana",
+      "description": "Test Transaction",
+      "image": "https://example.com/your_logo.jpg",
+      "handler": function (response){
+        alert(response.razorpay_payment_id);
+        // You can write logic here to send this response to your backend
+      },
+      "prefill": {
+          "name": "Arihant Surana",
+          "email": "customer@example.com",
+          "contact": "9999999999"
+      },
+      "theme": {
+          "color": "#F37254"
+      }
+    };
+    var rzp1 = new window.Razorpay(options);
+    rzp1.open();
+  };
+  
 
   return (
     <div className="cart_section">
@@ -64,7 +90,7 @@ const Cart = () => {
               </div>
             </div>
             <p>Shipping, taxes, and discount codes calculated at checkout</p>
-            <button className="checkout-btn">Check Out</button>
+            <button className="checkout-btn" onClick={handleCheckout}>Check Out</button>
           </div>
         )}
       </div>
