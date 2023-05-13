@@ -135,6 +135,9 @@
   flex-direction: column;
   gap: 10px;
 }
+.cart_items_box::-webkit-scrollbar{
+  display: none;
+}
 
 .h5-title{
   font-size: 16px;
