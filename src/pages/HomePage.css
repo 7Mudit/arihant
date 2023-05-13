@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'priori';
+    src: url('../../public/fonts/priorisans-1/PrioriSansOT-Bold.otf') format('truetype');
+    font-weight: bold;
+}
+
+.h2-title{
+    background-color: #faf3ec;
+    text-align: center;
+    font-family: 'priori', sans-serif;
+}

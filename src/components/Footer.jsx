@@ -63,6 +63,7 @@ const Footer = () => {
           placeholder="Enter your email"
         />
       </div>
+      
     </div>
   );
 };
