@@ -1,4 +1,4 @@
-import React, { useState , useEffect } from "react";
+import React, { useState , useEffect , useRef } from "react";
 import "./MainSection.css";
 import { IoIosArrowUp } from "react-icons/io";
 import { IoIosArrowDown } from "react-icons/io";
@@ -113,42 +113,28 @@ const MainSection = () => {
   const [diffusersVisible, setDiffusersVisible] = useState(false);
   const [roomSpraysVisible, setRoomSpraysVisible] = useState(false);
   const [candleHoldersVisible, setCandleHoldersVisible] = useState(false);
-//   window.onscroll = function() {
-//     var scrollHeight = Math.max(
-//         document.body.scrollHeight, document.documentElement.scrollHeight,
-//         document.body.offsetHeight, document.documentElement.offsetHeight,
-//         document.body.clientHeight, document.documentElement.clientHeight
-//     );
-//     var scrollPosition = window.pageYOffset + window.innerHeight;
 
-//     if (scrollPosition >= scrollHeight) {
-//         document.querySelector(".main_section_rightSide").style.overflowY = "scroll";
-//     } else {
-//         document.querySelector(".main_section_rightSide").style.overflowY = "hidden";
-//     }
-// };
-// useEffect(() => {
-//   const mainSectionRightSide = document.querySelector(".main_section_rightSide");
 
-//   const handleScroll = () => {
-//     // Check if page is scrolled to the bottom:
-//     if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
-//       // If yes, enable scrolling in the main_section_rightSide div:
-//       mainSectionRightSide.classList.add("scrollable-hidden-scrollbar");
-//     } else {
-//       // If not, disable scrolling in the main_section_rightSide div:
-//       mainSectionRightSide.classList.remove("scrollable-hidden-scrollbar");
-//     }
-//   };
+  const rightSideRef = useRef(null);
 
-//   // Add scroll event listener:
-//   window.addEventListener("scroll", handleScroll);
-
-//   // Clean up function to remove event listener when component unmounts:
-//   return () => window.removeEventListener("scroll", handleScroll);
-// }, []);  // Empty dependency array to run effect only once on mount and unmount.
-
-// // ... rest of the component ...
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     if (
+  //       document.documentElement.scrollTop >
+  //       document.documentElement.offsetHeight - window.innerHeight - 1
+  //     ) {
+  //       rightSideRef.current.style.overflowY = "scroll";
+  //     } else {
+  //       rightSideRef.current.style.overflowY = "hidden";
+  //     }
+  //   };
+  
+  //   document.addEventListener("scroll", handleScroll);
+  
+  //   return () => {
+  //     document.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, []);
 
   return (
     <div className="main_section">
@@ -293,7 +279,7 @@ const MainSection = () => {
           )}
         </AnimatePresence>
       </div>
-      <div className="main_section_rightSide">
+      <div className="main_section_rightSide" ref={rightSideRef}>
         <div className="main_section_categories">
           {categories.map((category, index) => (
             <Category
@@ -311,7 +297,6 @@ const MainSection = () => {
             <Products  name={product.name} prize={product.prize} img={product.img} id={index} />
           ))}
         </div>
-
       </div>
     </div>
   );

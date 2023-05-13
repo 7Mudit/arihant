@@ -5,16 +5,14 @@
     overflow-x: hidden;
     user-select: none;
 }
-
+/* 
 body::after {
     content: "";
     background: rgba(0, 0, 0, 0.08);
-    /* This is a black background with 10% opacity. Adjust the opacity as needed. */
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
     position: fixed;
     pointer-events: none;
-    /* This allows clicks to pass through the overlay */
-}
+} */

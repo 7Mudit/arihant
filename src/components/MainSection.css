@@ -17,6 +17,7 @@
     font-family: priori-bold, sans-serif;
     display: flex;
     align-items: flex-start;
+    border-bottom: 1px solid rgba(0 , 0, 0,0.2);
     
 }
 
@@ -67,9 +68,10 @@
 .main_section_rightSide {
     width: 80%;
     padding: 10px;
-    border-left: 5px solid white;
+    border-left: 15px solid white;
     height: 100%;
 }
+
 
 .main_section_rightSide::-webkit-scrollbar {
     display: none;
