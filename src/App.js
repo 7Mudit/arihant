@@ -1,10 +1,14 @@
+// App.js
 import HomePage from "./pages/HomePage";
-import './App.css'
+import "./App.css";
+import { useState } from "react";
+import { CartContext, CartProvider } from "./context/CartContext.js";
+
 function App() {
   return (
-    <div className="App">
-      <HomePage/>
-    </div>
+    <CartProvider>
+      <HomePage />
+    </CartProvider>
   );
 }
 

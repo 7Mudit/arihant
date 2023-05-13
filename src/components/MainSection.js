@@ -1,4 +1,4 @@
-import React, { useState , useEffect , useRef } from "react";
+import React, { useState} from "react";
 import "./MainSection.css";
 import { IoIosArrowUp } from "react-icons/io";
 import { IoIosArrowDown } from "react-icons/io";
@@ -115,29 +115,9 @@ const MainSection = () => {
   const [candleHoldersVisible, setCandleHoldersVisible] = useState(false);
 
 
-  const rightSideRef = useRef(null);
-
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     if (
-  //       document.documentElement.scrollTop >
-  //       document.documentElement.offsetHeight - window.innerHeight - 1
-  //     ) {
-  //       rightSideRef.current.style.overflowY = "scroll";
-  //     } else {
-  //       rightSideRef.current.style.overflowY = "hidden";
-  //     }
-  //   };
-  
-  //   document.addEventListener("scroll", handleScroll);
-  
-  //   return () => {
-  //     document.removeEventListener("scroll", handleScroll);
-  //   };
-  // }, []);
 
   return (
-    <div className="main_section">
+    <div className={`main_section`}>
       <div className="main_section_leftSide">
         <h3
           className="h3-title"
@@ -279,11 +259,12 @@ const MainSection = () => {
           )}
         </AnimatePresence>
       </div>
-      <div className="main_section_rightSide" ref={rightSideRef}>
+      <div className="main_section_rightSide">
         <div className="main_section_categories">
           {categories.map((category, index) => (
             <Category
               id={category.id}
+              key={index}
               name={category.name}
               img={category.img_link}
             />
@@ -294,7 +275,7 @@ const MainSection = () => {
 
         <div className="main_section_products">
           {products.map((product, index) => (
-            <Products  name={product.name} prize={product.prize} img={product.img} id={index} />
+            <Products  name={product.name} prize={product.prize} img={product.img} id={index} key={index} />
           ))}
         </div>
       </div>

@@ -1,0 +1,199 @@
+@font-face {
+  font-family: 'priori';
+  src: url('../../public/fonts/priorisans-1/zPrioriSansOT-Regular.otf') format('truetype');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'priori-bold';
+  src: url('../../public/fonts/priorisans-1/PrioriSansOT-Bold.otf') format('truetype');
+  font-weight: bold;
+}
+
+.cart_section {
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  z-index: 1000;
+  transition: transform 0.3s ease-out;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  right: 0;
+}
+
+.cartLeft-section {
+  width: 70%;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.4);
+  /* Semi-transparent white */
+  backdrop-filter: blur(1px);
+}
+
+
+ .cart {
+  width: 30%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #f1ece8;
+  box-sizing: border-box;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-out;
+  padding: 50px 25px;
+  display: grid; /* Using grid instead of flex */
+  grid-template-rows: auto 1fr; /* First row (header) takes as much space as needed, rest of the space is taken by the second row (items box) */
+}
+
+
+.cart-open {
+  transform: translateX(0);
+}
+
+.cart-close-button {
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.cart-section_header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 40px;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+.h1-title {
+  font-family: priori, sans-serif;
+  font-weight: 100;
+  text-transform: uppercase;
+
+}
+
+.h3-title {
+  margin-top: 20px;
+  font-family: priori, sans-serif;
+  font-weight: 100;
+  letter-spacing: 1.2px;
+}
+
+
+
+
+/* order note */
+.cart_item_note {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
+
+.cart-h4-title {
+  margin-top: 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.4);
+  padding-top: 20px;
+  width: 100%;
+  font-family: priori, sans-serif;
+  font-weight: 100;
+  letter-spacing: 1.2px;
+}
+
+.cart_item_note textarea {
+  background-color: #f1ece8;
+}
+
+
+.cart-product {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: auto; /* Let the height be determined by content */
+  gap: 20px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-top: 10px;
+}
+
+.cart-product-image{
+  width: 35%;
+  height: 150px;
+  overflow: hidden;
+}
+.cart-product img{
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: contain;
+}
+
+
+.cart-product-details {
+  width: 75%;
+  height: auto; /* Let the height be determined by content */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.h5-title{
+  font-size: 16px;
+  font-family: priori, sans-serif;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+}
+
+
+.cart-product-details p{
+  font-size: 12px;
+  font-family: priori, sans-serif;
+  font-weight: 300;
+  letter-spacing: 1.2px;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.cart_totalPrize{
+  margin-top: 10px;
+  border-top: 1px solid rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.cart_totalPrize p{
+  font-size: 15px;
+  font-family: priori, sans-serif;
+  font-weight: 400;
+  letter-spacing: 1.2px;
+}
+
+.subtotal_text{
+  font-size: 22px;
+  font-family: priori, sans-serif;
+  font-weight: 400;
+  letter-spacing: 1.2px;
+}
+
+.subtotal{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.checkout-btn{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 22px;
+  background-color: #b39f96;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 22px;
+  font-family: priori, sans-serif;
+  font-weight: 400;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}

@@ -32,6 +32,7 @@ body{
   justify-content: space-between;
   align-items: flex-start;
   padding: 32px;
+  position: relative;
 }
 
 .navbar_logo {
@@ -89,3 +90,16 @@ body{
   z-index: 2;
 
 }
+
+/* cart code */
+@keyframes bouncing {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0); }
+}
+
+.cart-icon.bouncing {
+  animation: bouncing 1s infinite;
+}
+
+
